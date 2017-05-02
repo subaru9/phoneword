@@ -25,7 +25,8 @@ module Phoneword
           index += 1
         end
       end
-      results.flatten(1)
+
+      map_words(results.flatten(1)).sort(&sorting)
     end
 
     private
@@ -36,6 +37,35 @@ module Phoneword
       tail_letters = phone.mapping_array(tail)
       head_letters.product(*tail_letters).map do |variant|
         variant.join.upcase
+      end
+    end
+
+    def map_words(results)
+      results.map do |result|
+        word = result.join
+        if dictionary.search_word(word)
+          word
+        else
+          result
+        end
+      end
+    end
+
+    def sorting
+      Proc.new do |a, b|
+        if a.is_a?(String) && b.is_a?(String)
+          a <=> b
+        elsif a.is_a?(String) && b.is_a?(Array)
+          1
+        elsif a.is_a?(Array) && b.is_a?(String)
+          -1
+        elsif a.is_a?(Array) && b.is_a?(Array)
+          if (a[0] <=> b[0]) == 0
+            a[1] <=> b[1]
+          else
+            a[0] <=> b[0]
+          end
+        end
       end
     end
 

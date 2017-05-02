@@ -1,7 +1,8 @@
 module Phoneword
   class Dictionary
     def initialize(args={})
-      @file_path = args.fetch(:file_path, File.expand_path('../../../data/dictionary.txt', __FILE__))
+      @file_path =
+        args.fetch(:file_path, File.expand_path('../../../data/dictionary.txt', __FILE__))
     end
 
     def words
@@ -15,6 +16,10 @@ module Phoneword
 
     def search(variations)
       variations.map { |v| words.bsearch { |x| v <=> x } }.compact
+    end
+
+    def search_word(word)
+      words.bsearch { |x| word <=> x }
     end
 
     private
