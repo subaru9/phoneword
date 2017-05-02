@@ -17,10 +17,15 @@ module Phoneword
         match_head = dictionary.search(variations(head_digits))
         match_tail = dictionary.search(variations(tail_digits))
 
-        results << match_head << match_tail
-        index += 1
+        if match_head.empty? || match_tail.empty?
+          index += 1
+          next
+        else
+          results << match_head.product(match_tail)
+          index += 1
+        end
       end
-      results.compact
+      results.flatten(1)
     end
 
     private
