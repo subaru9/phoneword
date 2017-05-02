@@ -13,6 +13,10 @@ module Phoneword
       @word_size ||= 2
     end
 
+    def search(variations)
+      variations.map { |v| words.bsearch { |x| v <=> x } }.compact
+    end
+
     private
 
     attr_reader :file_path
