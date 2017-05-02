@@ -1,5 +1,7 @@
 require "phoneword/version"
 
 module Phoneword
-  # Your code goes here...
+  autoload :Converter,  'phoneword/converter'
+  autoload :Dictionary, 'phoneword/dictionary'
+  autoload :Phone,      'phoneword/phone'
 end
