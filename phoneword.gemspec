@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Dmytro V."]
   spec.email         = ["staff1489@gmail.com"]
 
-  spec.summary       = %q{Convert phone number to 1-800-PHONEWORD format.}
-  spec.description   = %q{Selects words from the dictionary which are equivalents to a given telepnone number.}
+  spec.summary       = %q{Selects words from the dictionary which can be mapped back to the given telepnone number.}
+  spec.description   = %q{Selects words from the dictionary which can be mapped back to the given telepnone number.}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
 
   if spec.respond_to?(:metadata)

@@ -1,7 +1,6 @@
 # Phoneword
 
-Convert phone number to 1-800-PHONEWORD format.
-Selects words from the dictionary which are equivalents to a given telepnone number.
+Selects words from the dictionary which can be mapped back to the given telepnone number.
 
 ## Installation
 
