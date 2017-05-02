@@ -1,4 +1,5 @@
-require "phoneword/version"
+require 'phoneword/version'
+require 'pry'
 
 module Phoneword
   autoload :Converter,  'phoneword/converter'

@@ -9,6 +9,10 @@ module Phoneword
         File.readlines(file_path).each { |w| w.chomp! }
     end
 
+    def word_size
+      @word_size ||= 6
+    end
+
     private
 
     attr_reader :file_path

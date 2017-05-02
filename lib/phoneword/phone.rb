@@ -17,5 +17,19 @@ module Phoneword
       }
     end
 
+    def mapping_array(digits=[])
+      digits.map do |d|
+        mapping[d]
+      end
+    end
+
+    def digits
+      @digits ||= number.digits.reverse
+    end
+
+    private
+
+    attr_reader :number
+
   end
 end
