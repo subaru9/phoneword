@@ -6,7 +6,13 @@ module Phoneword
     end
 
     def process
+      dictionary.words
 
     end
+
+    private
+
+    attr_reader :dictionary,
+                :phone
   end
 end
