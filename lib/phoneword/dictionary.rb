@@ -10,7 +10,7 @@ module Phoneword
     end
 
     def word_size
-      @word_size ||= 6
+      @word_size ||= 2
     end
 
     private

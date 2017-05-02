@@ -27,6 +27,10 @@ module Phoneword
       @digits ||= number.digits.reverse
     end
 
+    def number_size
+      @number_size ||= digits.size - 1
+    end
+
     private
 
     attr_reader :number
